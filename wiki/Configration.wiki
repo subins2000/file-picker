@@ -41,22 +41,22 @@ define('FP_DECIMAL_NUM', 2);
 
 == Client ==
 
- * Define an variable to receive the JSON string
+ # Define an variable to receive the JSON string
  {{{
 var FP_RESULT = '';
  }}}
- * Open a File Picker
+ # Open a File Picker
  {{{
 window.open('./file-picker.php?var=FP_RESULT&filter=31&multi=1', '_blank', 'toolbar=no,menubar=no');
  }}}
  Params of URI
- * var
+  * var
  {{{
 @desc	Variable to receive the JSON string 
 @type	string
 @default	FP_RESULT
  }}}
- * filter
+  * filter
  {{{
 @desc	Filters list that can be selected by user 
 @type	integer
@@ -65,14 +65,14 @@ window.open('./file-picker.php?var=FP_RESULT&filter=31&multi=1', '_blank', 'tool
 @special value
 	1:All files	2:Images	4:Documents	8:Archives	16:Flash files	32:Audio files	64:Video files
  }}}
- * multi
+  * multi
  {{{
 @desc	Is multi-select files 
 @type	integer
 @default	0
 @range	1,0
  }}}
- * Parse the result as an object of JSON
+ # Parse the result as an object of JSON
  {{{
 var obj;
 if (FP_RESULT){
@@ -80,7 +80,7 @@ if (FP_RESULT){
 	alert('uri: ' + obj.uri + '\nfiles: ' + obj.files);
 }
  }}}
- * Demo
+ # Demo
  {{{
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
