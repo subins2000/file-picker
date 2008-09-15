@@ -1,0 +1,110 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: File Picker\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-09-11 22:28+0800\n"
+"PO-Revision-Date: 2008-09-11 22:32+0800\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-Basepath: ../\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: classes/FilePicker.php:48
+msgid "This script need JSON support. Please install JSON as a moudle of PHP, or include class `Services_JSON` if your server is still using PHP older then 5.2.0."
+msgstr ""
+
+#: classes/FilePicker.php:51
+msgid "All files"
+msgstr ""
+
+#: classes/FilePicker.php:52
+msgid "Images"
+msgstr ""
+
+#: classes/FilePicker.php:53
+msgid "Documents"
+msgstr ""
+
+#: classes/FilePicker.php:54
+msgid "Archives"
+msgstr ""
+
+#: classes/FilePicker.php:55
+msgid "Flash files"
+msgstr ""
+
+#: classes/FilePicker.php:56
+msgid "Audio files"
+msgstr ""
+
+#: classes/FilePicker.php:57
+msgid "Video files"
+msgstr ""
+
+#: classes/FilePicker.php:118
+msgid "File Picker"
+msgstr ""
+
+#: classes/FilePicker.php:133
+msgid "Folder"
+msgstr ""
+
+#: classes/FilePicker.php:136
+msgid "Refresh"
+msgstr ""
+
+#: classes/FilePicker.php:137
+msgid "Up"
+msgstr ""
+
+#: classes/FilePicker.php:146
+msgid "Loading..."
+msgstr ""
+
+#: classes/FilePicker.php:150
+msgid "Filename"
+msgstr ""
+
+#: classes/FilePicker.php:152
+msgid "OK"
+msgstr ""
+
+#: classes/FilePicker.php:155
+msgid "Filter"
+msgstr ""
+
+#: classes/FilePicker.php:157
+msgid "Cancel"
+msgstr ""
+
+#: classes/FilePicker.php:355
+msgid "Name"
+msgstr ""
+
+#: classes/FilePicker.php:362
+msgid "Folder(s)"
+msgstr ""
+
+#: classes/FilePicker.php:367
+msgid "File(s)"
+msgstr ""
+
+#: classes/FilePicker.php:374
+msgid "Preview"
+msgstr ""
+
+#: classes/FilePicker.php:380
+msgid "File Size"
+msgstr ""
+
+#: classes/FilePicker.php:385
+msgid "Last Modified"
+msgstr ""
+
+#: classes/FilePicker.php:391
+msgid "Permission"
+msgstr ""
+
