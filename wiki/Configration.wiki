@@ -1,4 +1,4 @@
-#summary One-sentence summary of this page.
+#summary How to config file-picker
 #labels Phase-Deploy
 
 == Server ==
