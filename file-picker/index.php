@@ -13,7 +13,8 @@ and GPL (GPL-LICENSE.txt) licenses.
 define('FP_SCRIPT_ROOT', dirname(__FILE__));
 require_once(FP_SCRIPT_ROOT . '/l10n.php');
 
-$lang = $_GET['lang'] ? $_GET['lang'] : 'zh_CN';
+$lang = '';
+$lang = $_GET['lang'] ? $_GET['lang'] : 'en';
 $domain = 'doc';
 load_textdomain(FP_SCRIPT_ROOT . '/languages', $domain);
 ?>
@@ -63,9 +64,9 @@ function get_value(){
 	<div id="summary">
 		<p id="translate">
 			Reload page to:
-			<a href="?lang=en">English</a> -
-			<a href="?lang=zh_CN">简体中文</a> -
-			<a href="?lang=zh_TW">繁體中文</a>
+			<a href="?lang=en"><?php _e('English', $domain); ?></a> -
+			<a href="?lang=zh_CN"><?php _e('Simplified Chinese', $domain); ?></a> -
+			<a href="?lang=zh_TW"><?php _e('Traditional Chinese', $domain); ?></a>
 		</p>
 
 		<p><?php _e('Display and choose files from your website. This software was developed with jQuery library, and write by php.', $domain); ?></p>

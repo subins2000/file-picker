@@ -3,383 +3,387 @@ msgstr ""
 "Project-Id-Version: File Picker\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-09-15 10:38+0800\n"
-"PO-Revision-Date: 2008-09-15 10:44+0800\n"
+"PO-Revision-Date: 2008-09-15 13:23+0800\n"
+"Language-Team: Hpyer <hpyer@yahoo.cn>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Traditional Chinese\n"
+"X-Poedit-Country: CHINA\n"
 "X-Poedit-SourceCharset: utf-8\n"
 "X-Poedit-KeywordsList: __;_e\n"
 "X-Poedit-Basepath: ../../\n"
+"Last-Translator: Hpyer <hpyer@yahoo.cn>\n"
 "X-Poedit-SearchPath-0: .\n"
 
 #: index.php:23
 msgid "Document"
-msgstr "�ĵ�"
+msgstr "文檔"
 
 #: index.php:23
 #: index.php:126
 #: index.php:205
 msgid "File Picker"
-msgstr ""
+msgstr "檔選擇器"
 
 #: index.php:57
 msgid "Summary"
-msgstr ""
+msgstr "概要"
 
 #: index.php:58
 #: index.php:104
 msgid "Demo"
-msgstr ""
+msgstr "示例"
 
 #: index.php:59
 msgid "Configration"
-msgstr ""
+msgstr "配置"
 
 #: index.php:60
 msgid "Developer"
-msgstr ""
+msgstr "開發者"
 
 #: index.php:67
 msgid "English"
-msgstr ""
+msgstr "英語"
 
 #: index.php:68
 msgid "Simplified Chinese"
-msgstr ""
+msgstr "簡體中文"
 
 #: index.php:69
 msgid "Traditional Chinese"
-msgstr ""
+msgstr "繁體中文"
 
 #: index.php:71
 msgid "Display and choose files from your website. This software was developed with jQuery library, and write by php."
-msgstr ""
+msgstr "顯示並且從您的網站上選擇檔。這是一款用 PHP 編寫，並基於 jQuery 類庫開發的程式。"
 
 #: index.php:72
 msgid "Features"
-msgstr ""
+msgstr "特點"
 
 #: index.php:74
 msgid "Multi-languages support"
-msgstr ""
+msgstr "支持多國語言"
 
 #: index.php:75
 msgid "Without refresh, its request server by AJAX"
-msgstr ""
+msgstr "無刷新，利用 AJAX 和服務器交互"
 
 #: index.php:76
 msgid "Multi-select files, you can pick several file(s) at same time"
-msgstr ""
+msgstr "多檔選取，您可以同時選擇多個檔"
 
 #: index.php:77
 msgid "Visual interface, its looks like a File Explorer"
-msgstr ""
+msgstr "可視化的介面，基本同檔管理器相同"
 
 #: index.php:78
 msgid "Easy to use, just open a new window by JavaScript to request file `file-picker.php` and define an variable to receive the JSON string"
-msgstr ""
+msgstr "使用簡單，只要利用 JavaScript 打開一個新窗口來訪問 `file-picker.php`檔，並定義一個接收 JSON 字串的變數即可"
 
 #: index.php:80
 msgid "Request"
-msgstr ""
+msgstr "需求"
 
 #: index.php:82
 #: index.php:87
 #: index.php:155
 #: index.php:249
 msgid "Server"
-msgstr ""
+msgstr "伺服器端"
 
 #: index.php:83
 #: index.php:88
 #: index.php:156
 #: index.php:250
 msgid "Client"
-msgstr ""
+msgstr "客戶端"
 
 #: index.php:83
 msgid "A browser"
-msgstr ""
+msgstr "一個流覽器"
 
 #: index.php:85
 msgid "Already tested"
-msgstr ""
+msgstr "已測試"
 
 #: index.php:90
 msgid "About"
-msgstr ""
+msgstr "關於"
 
 #: index.php:92
 msgid "Program Name"
-msgstr ""
+msgstr "程式名稱"
 
 #: index.php:93
 msgid "Version"
-msgstr ""
+msgstr "版本"
 
 #: index.php:93
 msgid "View History"
-msgstr ""
+msgstr "更新歷史"
 
 #: index.php:94
 msgid "License"
-msgstr ""
+msgstr "許可"
 
 #: index.php:95
 msgid "Program URI"
-msgstr ""
+msgstr "程式主頁"
 
 #: index.php:96
 msgid "Author"
-msgstr ""
+msgstr "作者"
 
 #: index.php:97
 msgid "E-mail"
-msgstr ""
+msgstr "E-mail"
 
 #: index.php:98
 msgid "Homepage"
-msgstr ""
+msgstr "個人主頁"
 
 #: index.php:105
 msgid "View Source"
-msgstr ""
+msgstr "源代碼"
 
 #: index.php:110
 #: index.php:144
 msgid "Select file(s)"
-msgstr ""
+msgstr "選擇檔"
 
 #: index.php:111
 #: index.php:145
 msgid "Get value"
-msgstr ""
+msgstr "取值"
 
 #: index.php:122
 #: index.php:201
 msgid "Define an variable to receive the JSON string"
-msgstr ""
+msgstr "定義一個用於接收 JSON 字串的變數"
 
 #: index.php:126
 #: index.php:205
 #, php-format
 msgid "Open a %s"
-msgstr ""
+msgstr "打開%s"
 
 #: index.php:133
 #: index.php:236
 msgid "Parse the result as an object of JSON"
-msgstr ""
+msgstr "將結果解析為 JSON 對象"
 
 #: index.php:160
 #: index.php:254
 #: index.php:380
 #, php-format
 msgid "File `%s`"
-msgstr ""
+msgstr "%s 檔"
 
 #: index.php:163
 msgid "Folder path"
-msgstr ""
+msgstr "檔夾物理地址"
 
 #: index.php:167
 msgid "Folder URI"
-msgstr ""
+msgstr "檔夾 URI 地址"
 
 #: index.php:171
 msgid "Langeuage [Default: zh_CN]"
-msgstr ""
+msgstr "語言 [默認：zh_CN]"
 
 #: index.php:175
 msgid "Data format [Default: Y-m-d]"
-msgstr ""
+msgstr "日期格式 [默認：Y-m-d]"
 
 #: index.php:179
 msgid "Time format [Default: H:i:s]"
-msgstr ""
+msgstr "事件格式 [默認：H:i:s]"
 
 #: index.php:183
 msgid "Separator thousand [Default: ,]"
-msgstr ""
+msgstr "千位分隔符號 [默認：,]"
 
 #: index.php:187
 msgid "Decimal point [Default: .]"
-msgstr ""
+msgstr "小數點 [默認：.]"
 
 #: index.php:191
 msgid "Number of decimals to display [Default: 2]"
-msgstr ""
+msgstr "小數點後數字的位數 [默認：2]"
 
 #: index.php:198
 msgid "View a demo"
-msgstr ""
+msgstr "查看一個示例"
 
 #: index.php:207
 msgid "Params of URI"
-msgstr ""
+msgstr "URI 的參數"
 
 #: index.php:211
 msgid "Variable to receive the JSON string"
-msgstr ""
+msgstr "用於接收 JSON 字串的變數"
 
 #: index.php:217
 msgid "Filters list that can be selected by user"
-msgstr ""
+msgstr "使用者可以選擇的篩檢程式列表"
 
 #: index.php:222
 msgid "All files"
-msgstr ""
+msgstr "所有檔"
 
 #: index.php:222
 msgid "Images"
-msgstr ""
+msgstr "圖片檔"
 
 #: index.php:222
 msgid "Documents"
-msgstr ""
+msgstr "文檔檔"
 
 #: index.php:223
 msgid "Archives"
-msgstr ""
+msgstr "歸檔檔"
 
 #: index.php:223
 msgid "Flash files"
-msgstr ""
+msgstr "動畫（Flash）檔"
 
 #: index.php:224
 msgid "Audio files"
-msgstr ""
+msgstr "音頻檔"
 
 #: index.php:224
 msgid "Video files"
-msgstr ""
+msgstr "視頻檔"
 
 #: index.php:228
 msgid "Is multi-select files"
-msgstr ""
+msgstr "是否多選檔"
 
 #: index.php:258
 msgid "To store all folders"
-msgstr ""
+msgstr "存儲所有檔夾"
 
 #: index.php:264
 msgid "To store all files"
-msgstr ""
+msgstr "存儲所有檔"
 
 #: index.php:270
 msgid "To store description of each filter"
-msgstr ""
+msgstr "存儲各篩檢程式的描述語句"
 
 #: index.php:276
 msgid "To store extensions of each filter"
-msgstr ""
+msgstr "村各篩檢程式相對應的擴展名"
 
 #: index.php:282
 msgid "Object of JSON parser"
-msgstr ""
+msgstr "JSON 解析器對象"
 
 #: index.php:288
 msgid "Constructor"
-msgstr ""
+msgstr "構造函數"
 
 #: index.php:294
 msgid "Display the main panel"
-msgstr ""
+msgstr "顯示主介面"
 
 #: index.php:302
 msgid "Get list by $filter (include files and folders)"
-msgstr ""
+msgstr "根據 $filter 的值獲取檔列表（包括檔和文件夾）"
 
 #: index.php:310
 msgid "Get information of $file under $dir"
-msgstr ""
+msgstr "獲取 $dir 下 $file 的資訊"
 
 #: index.php:318
 msgid "Make sure $dir is under FP_ROOT_PATH, and it really exist"
-msgstr ""
+msgstr "確保請求的目錄在 FP_ROOT_PATH 目錄下，並且真是存在"
 
 #: index.php:325
 msgid "To encode $obj into JSON format"
-msgstr ""
+msgstr "將 $obj 轉換為 JSON 字串格式"
 
 #: index.php:332
 msgid "Get folder-tree of $dir (recursive)"
-msgstr ""
+msgstr "獲取 $dir 所在目錄的目錄樹（遞歸）"
 
 #: index.php:340
 msgid "Get filters list that can be selected by user"
-msgstr ""
+msgstr "獲取使用者可以選擇的篩檢程式列表"
 
 #: index.php:347
 msgid "Read in all files and folders in $dir"
-msgstr ""
+msgstr "讀入 $dir 目錄下所有的檔/檔夾"
 
 #: index.php:354
 msgid "Get permission of $filename"
-msgstr ""
+msgstr "獲取 $file 的許可權"
 
 #: index.php:361
 msgid "Get extension of $filename"
-msgstr ""
+msgstr "獲取 $file 的擴展名"
 
 #: index.php:368
 msgid "Format bit size"
-msgstr ""
+msgstr "格式化位元組樣式"
 
 #: index.php:384
 msgid "Operation completed, return the JSON string like: {uri:\"/path/to/folder\", files:[\"file_1.txt\", \"file_2.jpg\"]}"
-msgstr ""
+msgstr "操作完成，返回 JSON 字串，如：{uri:\"/path/to/folder\", files:[\"file_1.txt\", \"file_2.jpg\"]}"
 
 #: index.php:389
 msgid "Close window, and return the JSON string"
-msgstr ""
+msgstr "關閉窗口，並返回 JSON 字串"
 
 #: index.php:395
 msgid "Get the URI of current folder"
-msgstr ""
+msgstr "獲取當前目錄的 URI"
 
 #: index.php:400
 #: index.php:429
 msgid "Get JSON string that be translated with all the selected file(s)"
-msgstr ""
+msgstr "獲取所有選中檔的 JSON 字串"
 
 #: index.php:405
 msgid "select the file/folder"
-msgstr ""
+msgstr "選中制定的檔/檔夾"
 
 #: index.php:412
 msgid "Unselect all file(s)/folder(s), and clear the information"
-msgstr ""
+msgstr "取消選中的檔/檔夾，並隱藏資訊"
 
 #: index.php:417
 msgid "Show the information box"
-msgstr ""
+msgstr "顯示資訊框"
 
 #: index.php:423
 msgid "Hide the information box"
-msgstr ""
+msgstr "隱藏資訊框"
 
 #: index.php:434
 msgid "Change the current folder to it parent"
-msgstr ""
+msgstr "向上一級目錄"
 
 #: index.php:439
 msgid "Deal with the incident of double-clicking on the file/folder"
-msgstr ""
+msgstr "檔/檔夾的雙擊處理方法"
 
 #: index.php:444
 msgid "Deal with the incident of clicking on the file/folder"
-msgstr ""
+msgstr "檔/檔夾的單擊處理方法"
 
 #: index.php:450
 msgid "Get infomation of the selected file/folder"
-msgstr ""
+msgstr "獲取但前選中檔/檔夾的資訊"
 
 #: index.php:455
 msgid "Get file(s)/folder(s) list of current directory"
-msgstr ""
+msgstr "獲取當前目錄的檔/檔夾列表"
 
 #: index.php:461
 msgid "Bind all events that we need"
-msgstr ""
+msgstr "綁定所有需要的事件"
 
