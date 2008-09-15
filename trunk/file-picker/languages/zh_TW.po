@@ -8,7 +8,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-Language: Chinese\n"
+"X-Poedit-Language: Traditional Chinese\n"
 "X-Poedit-Country: CHINA\n"
 "X-Poedit-SourceCharset: utf-8\n"
 "X-Poedit-KeywordsList: __;_e\n"
@@ -18,43 +18,43 @@ msgstr ""
 
 #: classes/FilePicker.php:48
 msgid "This script need JSON support. Please install JSON as a moudle of PHP, or include class `Services_JSON` if your server is still using PHP older then 5.2.0."
-msgstr "本脚本需要 JSON 的支持。请在安装 PHP 时加入 JSON 模块，如果您的服务器使用的 PHP 早于 5.2.0 版本，请包含 `Services_JSON` 类。"
+msgstr "本腳本需要 JSON 的支持。請在安裝 PHP 時加入 JSON 模組，如果您的伺服器使用的 PHP 早於 5.2.0 版本，請包含 `Services_JSON` 類。"
 
 #: classes/FilePicker.php:51
 msgid "All files"
-msgstr "所有文件"
+msgstr "所有檔"
 
 #: classes/FilePicker.php:52
 msgid "Images"
-msgstr "图片"
+msgstr "圖片"
 
 #: classes/FilePicker.php:53
 msgid "Documents"
-msgstr "文档"
+msgstr "文檔"
 
 #: classes/FilePicker.php:54
 msgid "Archives"
-msgstr "压缩文件"
+msgstr "壓縮檔"
 
 #: classes/FilePicker.php:55
 msgid "Flash files"
-msgstr "动画（Flash）文件"
+msgstr "動畫（Flash）檔"
 
 #: classes/FilePicker.php:56
 msgid "Audio files"
-msgstr "音频文件"
+msgstr "音頻檔"
 
 #: classes/FilePicker.php:57
 msgid "Video files"
-msgstr "视频文件"
+msgstr "視頻檔"
 
 #: classes/FilePicker.php:118
 msgid "File Picker"
-msgstr "文件选择器"
+msgstr "檔選擇器"
 
 #: classes/FilePicker.php:133
 msgid "Folder"
-msgstr "目录"
+msgstr "目錄"
 
 #: classes/FilePicker.php:136
 msgid "Refresh"
@@ -62,23 +62,23 @@ msgstr "刷新"
 
 #: classes/FilePicker.php:137
 msgid "Up"
-msgstr "返回上层"
+msgstr "返回上層"
 
 #: classes/FilePicker.php:146
 msgid "Loading..."
-msgstr "正在载入…"
+msgstr "正在載入…"
 
 #: classes/FilePicker.php:150
 msgid "Filename"
-msgstr "文件名"
+msgstr "檔案名"
 
 #: classes/FilePicker.php:152
 msgid "OK"
-msgstr "确定"
+msgstr "確定"
 
 #: classes/FilePicker.php:155
 msgid "Filter"
-msgstr "过滤"
+msgstr "過濾"
 
 #: classes/FilePicker.php:157
 msgid "Cancel"
@@ -86,29 +86,29 @@ msgstr "取消"
 
 #: classes/FilePicker.php:355
 msgid "Name"
-msgstr "名称"
+msgstr "名稱"
 
 #: classes/FilePicker.php:362
 msgid "Folder(s)"
-msgstr "目录数"
+msgstr "目錄數"
 
 #: classes/FilePicker.php:367
 msgid "File(s)"
-msgstr "文件数"
+msgstr "檔數"
 
 #: classes/FilePicker.php:374
 msgid "Preview"
-msgstr "预览"
+msgstr "預覽"
 
 #: classes/FilePicker.php:380
 msgid "File Size"
-msgstr "文件大小"
+msgstr "檔大小"
 
 #: classes/FilePicker.php:385
 msgid "Last Modified"
-msgstr "最后修改"
+msgstr "最後修改"
 
 #: classes/FilePicker.php:391
 msgid "Permission"
-msgstr "权限"
+msgstr "許可權"
 
