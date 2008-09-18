@@ -3,7 +3,6 @@
 Program Name: File Picker
 Program URI: http://code.google.com/p/file-picker/
 Description: Display and choose files from your website.
-Version: 1.0 build 20080915
 
 Copyright (c) 2008 Hpyer (hpyer[at]yahoo.cn)
 Dual licensed under the MIT (MIT-LICENSE.txt)
@@ -15,8 +14,8 @@ require_once(FP_SCRIPT_ROOT . '/l10n.php');
 
 $lang = '';
 $lang = $_GET['lang'] ? $_GET['lang'] : 'en';
-$domain = 'doc';
-load_textdomain(FP_SCRIPT_ROOT . '/languages', $domain);
+
+load_textdomain(FP_SCRIPT_ROOT . '/languages');
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -38,7 +37,7 @@ $(document).ready(function(){
 var FP_RESULT = '';
 
 function open_win(){
-	window.open('./file-picker.php?var=FP_RESULT&filter=31&multi=1', '_blank', 'toolbar=no,menubar=no');
+	window.open('./file-picker.php?var=FP_RESULT&amp;filter=31&amp;multi=1', '_blank', 'toolbar=no,menubar=no');
 }
 
 function get_value(){
@@ -72,7 +71,7 @@ function get_value(){
 		<p><?php _e('Display and choose files from your website. This software was developed with jQuery library, and write by php.', $domain); ?></p>
 		<h3><?php _e('Features', $domain); ?></h3>
 		<ul>
-			<li><?php _e('Multi-languages support', $domain); ?></li>
+			<li><?php _e('Multi-language support', $domain); ?></li>
 			<li><?php _e('Without refresh, its request server by AJAX', $domain); ?></li>
 			<li><?php _e('Multi-select files, you can pick several file(s) at same time', $domain); ?></li>
 			<li><?php _e('Visual interface, its looks like a File Explorer', $domain); ?></li>
@@ -125,7 +124,7 @@ var FP_RESULT = '';
 
 function open_win(){
 	// <?php echo sprintf(__('Open a %s', $domain), __('File Picker', $domain)); ?> 
-	window.open('./file-picker.php?var=FP_RESULT&filter=31&multi=1', '_blank', 'toolbar=no,menubar=no');
+	window.open('./file-picker.php?var=FP_RESULT&amp;filter=31&amp;multi=1', '_blank', 'toolbar=no,menubar=no');
 }
 
 function get_value(){
@@ -204,7 +203,7 @@ function get_value(){
 				</li>
 				<li>
 					<h3><?php echo sprintf(__('Open a %s', $domain), __('File Picker', $domain)); ?></h3>
-					<pre><code>window.open('./file-picker.php?var=FP_RESULT&filter=31&multi=1', '_blank', 'toolbar=no,menubar=no');</code></pre>
+					<pre><code>window.open('./file-picker.php?var=FP_RESULT&amp;filter=31&amp;multi=1', '_blank', 'toolbar=no,menubar=no');</code></pre>
 					<h4><?php _e('Params of URI', $domain); ?></h4>
 					<ul>
 						<li>
@@ -287,14 +286,6 @@ if (FP_RESULT){
 				<li>
 					<h3>FilePicker::FilePicker()</h3>
 					<pre><code>@desc	<?php _e('Constructor', $domain); ?> 
-@access	public
-@return	void</code></pre>
-				</li>
-				<li>
-					<h3>FilePicker::display($var, $filter)</h3>
-					<pre><code>@desc	<?php _e('Display the main panel', $domain); ?> 
-@param	string	$var	[default:FP_RESULT]
-@param	integer	$filter	[default:31]
 @access	public
 @return	void</code></pre>
 				</li>

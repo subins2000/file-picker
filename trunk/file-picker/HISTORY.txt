@@ -1,4 +1,10 @@
 
+Version 1.0.1
+ - 2008-09-18
+ - Hpyer:
+ - Write the HTML templet into file-picker.php and remove it from FilePicker.php
+ - Merge language files together
+
 Version 1.0
  - 2008-09-15
  - Hpyer:
