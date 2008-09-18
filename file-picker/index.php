@@ -14,8 +14,8 @@ require_once(FP_SCRIPT_ROOT . '/l10n.php');
 
 $lang = '';
 $lang = $_GET['lang'] ? $_GET['lang'] : 'en';
-
-load_textdomain(FP_SCRIPT_ROOT . '/languages');
+$domain = null;
+load_textdomain(FP_SCRIPT_ROOT . '/languages', $domain);
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -37,7 +37,7 @@ $(document).ready(function(){
 var FP_RESULT = '';
 
 function open_win(){
-	window.open('./file-picker.php?var=FP_RESULT&amp;filter=31&amp;multi=1', '_blank', 'toolbar=no,menubar=no');
+	window.open('./file-picker.php?var=FP_RESULT&filter=31&multi=1', '_blank', 'toolbar=no,menubar=no');
 }
 
 function get_value(){
