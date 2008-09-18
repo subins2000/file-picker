@@ -90,7 +90,7 @@ switch ($action){
 <script type="text/javascript" src="./media/jquery/jquery.autocomplete.pack.js"></script>
 <script type="text/javascript" src="./media/jquery/jquery.ppdrag.pack.js"></script>
 <script type="text/javascript" src="./media/jquery/jquery.base64.min.js"></script>
-<script type="text/javascript" src="./media/file-picker.js"></script>
+<script type="text/javascript" src="./media/file-picker.pack.js"></script>
 </head>
 
 <body>
