@@ -58,8 +58,9 @@ var FilePicker = {
 	@return	void
 	*/
 	do_close: function(obj) {
+		var self = FilePicker;
 		if (typeof(obj) != 'string') obj = '';
-		eval('window.opener.' + this.params.key + '=\'' + obj + '\';');
+		eval('window.opener.' + self.params.key + '=\'' + obj + '\';');
 		window.close();
 	},
 
