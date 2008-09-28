@@ -135,7 +135,7 @@ function get_value(){
 		<h3><?php _e('Program', $domain); ?></h3>
 		<ul>
 			<li><?php _e('Program Name', $domain); ?>: File Picker</li>
-			<li><?php _e('Version', $domain); ?>: 1.0 builde 20080915 [<a href="HISTORY.txt"><?php _e('View History', $domain); ?></a>]</li>
+			<li><?php _e('Version', $domain); ?>: 1.0.2 builde 20080928 [<a href="HISTORY.txt"><?php _e('View History', $domain); ?></a>]</li>
 			<li><?php _e('License', $domain); ?>: <a href="MIT-LICENSE.txt">MIT</a> &amp; <a href="./GPL-LICENSE.txt">GPL</a></li>
 			<li><?php _e('Program URI', $domain); ?>: <a href="http://code.google.com/p/file-picker/" target="_blank">http://code.google.com/p/file-picker/</a></li>
 			<li><?php _e('Documentation', $domain); ?>: <a href="http://code.google.com/p/file-picker/w/list" target="_blank">http://code.google.com/p/file-picker/w/list</a></li>
