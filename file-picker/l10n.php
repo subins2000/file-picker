@@ -3,7 +3,6 @@
 Program Name: File Picker
 Program URI: http://code.google.com/p/file-picker/
 Description: Display and choose files from your website.
-Version: 1.0 build 20080915
 
 Copyright (c) 2008 Hpyer (hpyer[at]yahoo.cn)
 Dual licensed under the MIT (MIT-LICENSE.txt)
@@ -11,8 +10,8 @@ and GPL (GPL-LICENSE.txt) licenses.
 */
 
 define('L10N_CLASS_ROOT', dirname(__FILE__) . '/classes/gettext');
-require_once(L10N_CLASS_ROOT . '/streams.class.php');
-require_once(L10N_CLASS_ROOT . '/gettext.class.php');
+require_once(L10N_CLASS_ROOT . '/streams.php');
+require_once(L10N_CLASS_ROOT . '/gettext.php');
 
 function load_textdomain($path = './languages', $domain = 'main'){
 	global $l10n;

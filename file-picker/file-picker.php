@@ -44,7 +44,6 @@ define('FP_SCRIPT_ROOT', dirname(__FILE__));
 define('FP_CLASS_ROOT', FP_SCRIPT_ROOT . '/classes');
 require_once(FP_SCRIPT_ROOT . '/l10n.php');
 require_once(FP_CLASS_ROOT . '/JSON.php');
-require_once(FP_CLASS_ROOT . '/gettext/gettext.class.php');
 require_once(FP_CLASS_ROOT . '/FilePicker.php');
 
 $lang = FP_LANGUAGE;
@@ -70,7 +69,7 @@ switch ($action){
 		$fp->new_folder($dir, $folder);
 		break;
 	default :
-		$var = $_GET['var'] ? $_GET['var'] : 'FP_RESULT';
+		$key = $_GET['var'] ? $_GET['var'] : 'FP_RESULT';
 		$filter = $_GET['filter'] ? $_GET['filter'] : 31;
 		$multi = $_GET['multi'] ? true : false;
 
@@ -87,10 +86,10 @@ switch ($action){
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link rel="stylesheet" type="text/css" href="./media/file-picker.css" />
 <script type="text/javascript" src="./media/jquery/jquery.pack.js"></script>
-<script type="text/javascript" src="./media/jquery/jquery.autocomplete.pack.js"></script>
+<script type="text/javascript" src="./media/jquery/jquery.autocomplete.min.js"></script>
 <script type="text/javascript" src="./media/jquery/jquery.ppdrag.pack.js"></script>
 <script type="text/javascript" src="./media/jquery/jquery.base64.min.js"></script>
-<script type="text/javascript" src="./media/file-picker.pack.js"></script>
+<script type="text/javascript" src="./media/file-picker.min.js"></script>
 </head>
 
 <body>
@@ -125,21 +124,16 @@ switch ($action){
 <div id="info_box"></div>
 </form>
 <script type="text/javascript">
-var FP_RETURN_URI = '<?php echo FP_ROOT_URI; ?>';
-var FP_RETURN_VAR = '<?php echo $var; ?>';
-var FP_MULTI_SELECT = <?php echo $multi ? 'true' : 'false'; ?>;
-var FP_LAST_CLICK = null;
-
 $(document).ready(function(){
-	$(window).get(0).resizeTo(400, 360);
-	$.base64.is_unicode = true;
-	$.ajaxSetup({
-		url: '<?php echo $_SERVER['PHP_SELF']; ?>',
-		dataType: 'json'
+	//$(window).get(0).resizeTo(400, 360);
+	FilePicker.init({
+		uri: '<?php echo FP_ROOT_URI; ?>',
+		key: '<?php echo $key; ?>',
+		multi: <?php echo $multi ? 'true' : 'false'; ?>,
+		access: '<?php echo $_SERVER['PHP_SELF']; ?>',
+		unicode: true,
+		delay: 300
 	});
-	do_translate_options();
-	events_binder();
-	get_list();
 });
 </script>
 </body>
