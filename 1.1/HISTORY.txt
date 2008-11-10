@@ -1,0 +1,20 @@
+
+Version 1.0.2
+ - 2008-09-28
+ - Hpyer:
+ - Rewrite file-picker.js, pack all functions in class of FilePicker
+ - Fix the plugin Auto-Complete of jQuery
+ - Upgrade PHP-gettext to the version of 1.0.7
+ - Update documentation
+ - Update language files
+
+Version 1.0.1
+ - 2008-09-18
+ - Hpyer:
+ - Write the HTML templet into file-picker.php and remove it from FilePicker.php
+ - Merge language files together
+
+Version 1.0
+ - 2008-09-15
+ - Hpyer:
+ - Initial version
