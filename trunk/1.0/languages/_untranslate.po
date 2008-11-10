@@ -1,0 +1,274 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: File Picker\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-09-28 20:38+0800\n"
+"PO-Revision-Date: 2008-09-28 20:38+0800\n"
+"Last-Translator: Hpyer <hpyer@yahoo.cn>\n"
+"Language-Team: Hpyer <hpyer@yahoo.cn>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-Basepath: ../\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: index.php:23
+msgid "Document"
+msgstr ""
+
+#: index.php:23
+#: index.php:107
+#: file-picker.php:85
+msgid "File Picker"
+msgstr ""
+
+#: index.php:55
+#: index.php:68
+msgid "Summary"
+msgstr ""
+
+#: index.php:56
+#: index.php:85
+msgid "Demo"
+msgstr ""
+
+#: index.php:57
+msgid "About"
+msgstr ""
+
+#: index.php:63
+msgid "English"
+msgstr ""
+
+#: index.php:64
+msgid "Simplified Chinese"
+msgstr ""
+
+#: index.php:65
+msgid "Traditional Chinese"
+msgstr ""
+
+#: index.php:69
+msgid "Display and choose files from your website. This software was developed with jQuery library, and write by php."
+msgstr ""
+
+#: index.php:70
+msgid "Features"
+msgstr ""
+
+#: index.php:72
+msgid "Auto-Complete the filename"
+msgstr ""
+
+#: index.php:73
+msgid "File/Folder information, also you can preview image files"
+msgstr ""
+
+#: index.php:74
+msgid "Support unicode character, file(s)/folder(s) named in unicode character will be displayed fine"
+msgstr ""
+
+#: index.php:75
+msgid "Multi-select files, you can pick several file(s) if the CTRL/SHIFT key was pressed down"
+msgstr ""
+
+#: index.php:76
+msgid "Multi-language support"
+msgstr ""
+
+#: index.php:77
+msgid "Without refresh, its request server using AJAX"
+msgstr ""
+
+#: index.php:78
+msgid "Visual interface, its looks like a Explorer of Windows"
+msgstr ""
+
+#: index.php:79
+msgid "Easy to use, just open a new window by JavaScript to request file `file-picker.php` and define an variable to receive the JSON string"
+msgstr ""
+
+#: index.php:86
+msgid "View Source"
+msgstr ""
+
+#: index.php:91
+#: index.php:125
+msgid "Select file(s)"
+msgstr ""
+
+#: index.php:92
+#: index.php:126
+msgid "Get value"
+msgstr ""
+
+#: index.php:103
+msgid "Define an variable to receive the JSON string"
+msgstr ""
+
+#: index.php:107
+#, php-format
+msgid "Open a %s"
+msgstr ""
+
+#: index.php:114
+msgid "Parse the result as an object of JSON"
+msgstr ""
+
+#: index.php:135
+msgid "Program"
+msgstr ""
+
+#: index.php:137
+msgid "Program Name"
+msgstr ""
+
+#: index.php:138
+msgid "Version"
+msgstr ""
+
+#: index.php:138
+msgid "View History"
+msgstr ""
+
+#: index.php:139
+msgid "License"
+msgstr ""
+
+#: index.php:140
+msgid "Program URI"
+msgstr ""
+
+#: index.php:141
+msgid "Documentation"
+msgstr ""
+
+#: index.php:143
+msgid "Request"
+msgstr ""
+
+#: index.php:145
+#: index.php:150
+msgid "Server"
+msgstr ""
+
+#: index.php:146
+#: index.php:151
+msgid "Client"
+msgstr ""
+
+#: index.php:146
+msgid "A browser"
+msgstr ""
+
+#: index.php:148
+msgid "Already tested"
+msgstr ""
+
+#: index.php:153
+#: index.php:155
+msgid "Author"
+msgstr ""
+
+#: index.php:156
+msgid "E-mail"
+msgstr ""
+
+#: index.php:157
+msgid "Homepage"
+msgstr ""
+
+#: file-picker.php:100
+msgid "Folder"
+msgstr ""
+
+#: file-picker.php:103
+msgid "Refresh"
+msgstr ""
+
+#: file-picker.php:104
+msgid "Up"
+msgstr ""
+
+#: file-picker.php:109
+msgid "Loading..."
+msgstr ""
+
+#: file-picker.php:113
+msgid "Filename"
+msgstr ""
+
+#: file-picker.php:115
+msgid "OK"
+msgstr ""
+
+#: file-picker.php:118
+msgid "Filter"
+msgstr ""
+
+#: file-picker.php:120
+msgid "Cancel"
+msgstr ""
+
+#: classes/FilePicker.php:61
+msgid "This script need JSON support. Please install JSON as a moudle of PHP, or include class `Services_JSON` if your server is still using PHP older then 5.2.0."
+msgstr ""
+
+#: classes/FilePicker.php:64
+msgid "All files"
+msgstr ""
+
+#: classes/FilePicker.php:65
+msgid "Images"
+msgstr ""
+
+#: classes/FilePicker.php:66
+msgid "Documents"
+msgstr ""
+
+#: classes/FilePicker.php:67
+msgid "Archives"
+msgstr ""
+
+#: classes/FilePicker.php:68
+msgid "Flash files"
+msgstr ""
+
+#: classes/FilePicker.php:69
+msgid "Audio files"
+msgstr ""
+
+#: classes/FilePicker.php:70
+msgid "Video files"
+msgstr ""
+
+#: classes/FilePicker.php:124
+msgid "Name"
+msgstr ""
+
+#: classes/FilePicker.php:131
+msgid "Folder(s)"
+msgstr ""
+
+#: classes/FilePicker.php:136
+msgid "File(s)"
+msgstr ""
+
+#: classes/FilePicker.php:143
+msgid "Preview"
+msgstr ""
+
+#: classes/FilePicker.php:149
+msgid "File Size"
+msgstr ""
+
+#: classes/FilePicker.php:154
+msgid "Last Modified"
+msgstr ""
+
+#: classes/FilePicker.php:160
+msgid "Permission"
+msgstr ""
+
