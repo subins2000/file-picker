@@ -15,7 +15,7 @@ and GPL (GPL-LICENSE.txt) licenses.
 define('FP_ROOT_PATH', './media');
 
 // Folder URI
-define('FP_ROOT_URI', '/eclipse/file-picker/media');
+define('FP_ROOT_URI', '/eclipse/file-picker/trunk/1.1/media');
 
 // Langeuage [Default: zh_CN]
 define('FP_LANGUAGE', 'zh_CN');

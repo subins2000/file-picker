@@ -307,6 +307,13 @@ var FilePicker = {
 						}
 						i++;
 					});
+					// Add a link of current file to open it in a new window, except folder
+					if (t.attr('class').indexOf('folder') !== -1) return ;
+					var folder = $.base64.decode($('#folders_tree').val());
+					folder = self.params.uri + (folder == '/' ? '' : folder);
+					$('#info_box').append(
+						'&lt;<em><a href="' + folder + '/' + t.text() + '" target="_blank">Open in a new window</a></em>&gt;'
+					);
 				}
 			});
 		}
