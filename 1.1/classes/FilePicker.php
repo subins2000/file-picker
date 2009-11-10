@@ -1,57 +1,59 @@
 <?php
-/*
-Program Name: File Picker
-Program URI: http://code.google.com/p/file-picker/
-Description: Display and choose files from your website.
-
-Copyright (c) 2008 Hpyer (hpyer[at]yahoo.cn)
-Dual licensed under the MIT (MIT-LICENSE.txt)
-and GPL (GPL-LICENSE.txt) licenses.
-*/
+/**
+ * Program Name: File Picker
+ * Program URI: http://code.google.com/p/file-picker/
+ * Description: This program will let you browse server-side folders and files
+ * 				like a Windows Explorer, and you can pick several files that you
+ * 				want to process in somewhere.
+ * 
+ * Copyright (c) 2008-2009 Hpyer (coolhpy[at]163.com)
+ * Dual licensed under the MIT (MIT-LICENSE.txt)
+ * and GPL (GPL-LICENSE.txt) licenses.
+ */
 
 class FilePicker {
 
-	/*
-	@desc	To store all folders
-	@access	private
-	@type	array
-	*/
+	/**
+	 * @desc	To store all folders
+	 * @access	private
+	 * @type	array
+	 */
 	var $folders;
 
-	/*
-	@desc	To store all files
-	@access	private
-	@type	array
-	*/
+	/**
+	 * @desc	To store all files
+	 * @access	private
+	 * @type	array
+	 */
 	var $files;
 
-	/*
-	@desc	To store description of each filter
-	@access	private
-	@type	array
-	*/
+	/**
+	 * @desc	To store description of each filter
+	 * @access	private
+	 * @type	array
+	 */
 	var $filters;
 
-	/*
-	@desc	To store extensions of each filter
-	@access	private
-	@type	array
-	*/
+	/**
+	 * @desc	To store extensions of each filter
+	 * @access	private
+	 * @type	array
+	 */
 	var $filters_exts;
 
-	/*
-	@desc	Object of JSON parser
-	@access	private
-	@type	object
-	*/
+	/**
+	 * @desc	Object of JSON parser
+	 * @access	private
+	 * @type	object
+	 */
 	var $json;
 
 
-	/*
-	@desc	Constructor
-	@access	public
-	@return	void
-	*/
+	/**
+	 * @desc	Constructor
+	 * @access	public
+	 * @return	void
+	 */
 	function FilePicker(){
 		if (function_exists('json_encode')){
 			$this->json = true;
@@ -80,13 +82,13 @@ class FilePicker {
 		);
 	}
 
-	/*
-	@desc	Get list by $filter (include files and folders)
-	@param	string	$dir
-	@param	integer	$filter	[default:0]	[range:0,1,2,3,4,5,6]
-	@access	public
-	@return	string
-	*/
+	/**
+	 * @desc	Get list by $filter (include files and folders)
+	 * @param	string	$dir
+	 * @param	integer	$filter	[default:0]	[range:0,1,2,3,4,5,6]
+	 * @access	public
+	 * @return	string
+	 */
 	function get_list($dir, $filter = 0){
 		if (!$dir = $this->do_check($dir)) return '';
 		$this->read_dir($dir);
@@ -107,13 +109,13 @@ class FilePicker {
 		return $this->do_json_encode($list);
 	}
 
-	/*
-	@desc	Get information of $file under $dir
-	@param	string	$dir
-	@param	string	$file
-	@access	public
-	@return	string
-	*/
+	/**
+	 * @desc	Get information of $file under $dir
+	 * @param	string	$dir
+	 * @param	string	$file
+	 * @access	public
+	 * @return	string
+	 */
 	function get_info($dir, $file){
 		if (!$dir = $this->do_check($dir)) return '';
 		$filename = $dir . '/' . base64_decode($file);
@@ -166,12 +168,12 @@ class FilePicker {
 	}
 
 
-	/*
-	@desc	Make sure $dir is under FP_ROOT_PATH, and it really exist
-	@param	string	$dir
-	@access	private
-	@return	boolean
-	*/
+	/**
+	 * @desc	Make sure $dir is under FP_ROOT_PATH, and it really exist
+	 * @param	string	$dir
+	 * @access	private
+	 * @return	boolean
+	 */
 	function do_check($dir){
 		$dir = base64_decode($dir);
 		$dir = (strpos($dir, FP_ROOT_PATH) === 0) ? $dir : FP_ROOT_PATH . $dir;
@@ -181,12 +183,12 @@ class FilePicker {
 		return false;
 	}
 
-	/*
-	@desc	To encode $obj into JSON format
-	@param	[mixed]	$obj
-	@access	private
-	@return	string
-	*/
+	/**
+	 * @desc	To encode $obj into JSON format
+	 * @param	[mixed]	$obj
+	 * @access	private
+	 * @return	string
+	 */
 	function do_json_encode($obj){
 		if ($this->json === true){
 			return json_encode($obj);
@@ -196,18 +198,18 @@ class FilePicker {
 		return '["Unencode"]';
 	}
 
-	/*
-	@desc	Get folder-tree of $dir (non-recursive)
-	@param	string	$dir	[default:FP_ROOT_PATH]
-	@param	string	$level	[default:0]
-	@access	private
-	@since	1.1
-	@return	string
-	*/
+	/**
+	 * @desc	Get folder-tree of $dir (non-recursive)
+	 * @param	string	$dir	[default:FP_ROOT_PATH]
+	 * @param	string	$level	[default:0]
+	 * @access	private
+	 * @since	1.1
+	 * @return	string
+	 */
 	function get_tree($dir=FP_ROOT_PATH, $level=0){
-		if (FP_DIR_LEVEL <= -1) {
-			
-		}
+		//if (FP_DIR_LEVEL !== -1 && $level >= FP_DIR_LEVEL) {
+		//	return '';
+		//}
 		$tree = '';
 		if (is_dir($dir)){
 			for ($i=0,$prefix=''; $i<=$level; $i++) $prefix .= '...';
@@ -226,38 +228,12 @@ class FilePicker {
 		return $tree;
 	}
 
-	/*
-	@desc	Get folder-tree of $dir (recursive)
-	@param	string	$dir	[default:FP_ROOT_PATH]
-	@param	string	$level	[default:0]
-	@access	private
-	@return	string
-	*/
-	function get_tree_recursive($dir=FP_ROOT_PATH, $level=0){
-		$tree = '';
-		if (is_dir($dir)){
-			for ($i=0,$prefix=''; $i<=$level; $i++) $prefix .= '...';
-			if ($dh = opendir($dir)){
-				while (($file = readdir($dh)) !== false){
-					if ($file == '.' || $file == '..') continue;
-					$filename = $dir . '/' . $file;
-					if (is_dir($filename)){
-						$tree .= '<option value="' . base64_encode(str_replace(FP_ROOT_PATH, '', $filename)) . '">' . base64_encode($prefix . '|- ' . $file) . '</option>';
-						$tree .= $this->get_tree_recursive($filename,$level+1);
-					}
-				}
-				closedir($dh);
-			}
-		}
-		return $tree;
-	}
-	
-	/*
-	@desc	Get filters list that can be selected by client-side user
-	@param	integer	$filter	[default:31]	[range:1,2,3...126,127]
-	@access	private
-	@return	string
-	*/
+	/**
+	 * @desc	Get filters list that can be selected by client-side user
+	 * @param	integer	$filter	[default:31]	[range:1,2,3...126,127]
+	 * @access	private
+	 * @return	string
+	 */
 	function get_filters($filter = 31){
 		if ($filter <=0 || $filter > 127) $filter = 31;
 		$filters = '';
@@ -271,12 +247,12 @@ class FilePicker {
 		return $filters;
 	}
 
-	/*
-	@desc	Read in all files and folders in $dir
-	@param	string	$dir
-	@access	private
-	@return	void
-	*/
+	/**
+	 * @desc	Read in all files and folders in $dir
+	 * @param	string	$dir
+	 * @access	private
+	 * @return	void
+	 */
 	function read_dir($dir){
 		if (is_dir($dir)){
 			if ($dh = opendir($dir)){
@@ -293,12 +269,12 @@ class FilePicker {
 		@sort($this->files);
 	}
 
-	/*
-	@desc	Get filename of $filename
-	@param	string	$filename
-	@access	private
-	@return	string
-	*/
+	/**
+	 * @desc	Get filename of $filename
+	 * @param	string	$filename
+	 * @access	private
+	 * @return	string
+	 */
 	function get_permission($file){
 		$perms = fileperms($file);
 
@@ -346,12 +322,12 @@ class FilePicker {
 		return $info;
 	}
 
-	/*
-	@desc	Get extension of $filename
-	@param	string	$file
-	@access	private
-	@return	string
-	*/
+	/**
+	 * @desc	Get extension of $filename
+	 * @param	string	$file
+	 * @access	private
+	 * @return	string
+	 */
 	function get_extension($file){
 		$ext = '';
 		$pos = strrpos($file, ".");
@@ -361,15 +337,15 @@ class FilePicker {
 		return strtolower($ext);
 	}
 
-	/*
-	@desc	Format bit size
-	@param	integer	$size
-	@param	integer	$decimals	[default:2]
-	@param	string	$decimal	[default:.]
-	@param	string	$thousand	[default:,]
-	@access	private
-	@return	string
-	*/
+	/**
+	 * @desc	Format bit size
+	 * @param	integer	$size
+	 * @param	integer	$decimals	[default:2]
+	 * @param	string	$decimal	[default:.]
+	 * @param	string	$thousand	[default:,]
+	 * @access	private
+	 * @return	string
+	 */
 	function format_size($size, $decimals = 2, $decimal = '.', $thousand = ','){
 		switch ($size){
 			case ($size > 1073741824) :

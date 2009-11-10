@@ -1,36 +1,81 @@
-/*
-Program Name: File Picker
-Program URI: http://code.google.com/p/file-picker/
-Description: Display and choose files from your website.
-
-Copyright (c) 2008 Hpyer (hpyer[at]yahoo.cn)
-Dual licensed under the MIT (MIT-LICENSE.txt)
-and GPL (GPL-LICENSE.txt) licenses.
-*/
+/**
+ * Program Name: File Picker
+ * Program URI: http://code.google.com/p/file-picker/
+ * Description: This program will let you browse server-side folders and files
+ * 				like a Windows Explorer, and you can pick several files that you
+ * 				want to process in somewhere.
+ * 
+ * Copyright (c) 2008-2009 Hpyer (coolhpy[at]163.com)
+ * Dual licensed under the MIT (MIT-LICENSE.txt)
+ * and GPL (GPL-LICENSE.txt) licenses.
+ */
 
 var FilePicker = {
 
+	/**
+	 * @desc	
+	 * @access	public
+	 */
 	params: {
+		/**
+		 * @desc	The URI of root folder that user can visit via HTTP method
+		 * @var		string
+		 */
 		uri: '.',
+		/**
+		 * @desc	Variable to receive the JSON string after user selected files
+		 * @var		string
+		 */
 		key: 'FP_RESULT',
+		/**
+		 * @desc	Is user can multi-select files or not
+		 * @var		bool
+		 */
 		multi: true,
+		/**
+		 * @desc	Server-side script
+		 * @var		string
+		 */
 		access: 'file-picker.php',
+		/**
+		 * @desc	Is using unicode or not
+		 * @var		bool
+		 */
 		unicode: true,
-		auto-complete: true,	// @since: 1.1
-		delay: 300
+		/**
+		 * @desc	It means double-click if the time click twice quickly 
+		 * 			is less than the following seconds. (Unit: millisecond)
+		 * @var		int
+		 */
+		delay: 300,
+		/**
+		 * @desc	Is auto-complete filename or not
+		 * @var		bool
+		 * @since	1.1
+		 */
+		auto_complete: true
 	},
+
+	/**
+	 * @desc
+	 * @access	private
+	 */
 	last_click: null,
+
+	/**
+	 * @access	private
+	 */
 	timer: null,
 
 
-	/*
-	@desc	Initialization
-	@since	1.0.2
-	@return	void
-	*/
+	/**
+	 * @desc	Initialization
+	 * @since	1.0.2
+	 * @return	void
+	 */
 	init: function(params) {
 		$.extend(this.params, params);
-		$.base64.is_unicode = this.params.use_unicode;
+		$.base64.is_unicode = this.params.unicode;
 		$.ajaxSetup({
 			url: this.params.access,
 			dataType: 'json'
@@ -40,10 +85,10 @@ var FilePicker = {
 		this.get_list();
 	},
 
-	/*
-	@desc	Operation completed, return the JSON string like: {uri:"/path/to/folder", files:["file_1.txt", "file_2.jpg"]}
-	@return	void
-	*/
+	/**
+	 * @desc	Operation completed, return the JSON string like: {uri:"/path/to/folder", files:["file_1.txt", "file_2.jpg"]}
+	 * @return	void
+	 */
 	do_complete: function() {
 		var self = FilePicker;
 		var obj = '{' +
@@ -53,11 +98,11 @@ var FilePicker = {
 		self.do_close(obj);
 	},
 
-	/*
-	@desc	Close window, and return the JSON string
-	@param	string	obj
-	@return	void
-	*/
+	/**
+	 * @desc	Close window, and return the JSON string
+	 * @param	string	obj
+	 * @return	void
+	 */
 	do_close: function(obj) {
 		if (typeof(obj) != 'string') obj = '';
 		eval('window.parent.' + FilePicker.params.key + '=\'' + obj + '\';');
@@ -68,21 +113,21 @@ var FilePicker = {
 		//window.close();
 	},
 
-	/*
-	@desc	Get the URI of current folder
-	@return	string
-	*/
+	/**
+	 * @desc	Get the URI of current folder
+	 * @return	string
+	 */
 	get_uri: function() {
 		var uri;
-		uri = $.base64.decode($('#folders_tree').val());
+		uri = $.base64.decode($('#target_dir').val());
 		uri = uri == '/' ? '' : uri;
 		return this.params.uri + uri;
 	},
 
-	/*
-	@desc	Get JSON string that be translated with all the selected file(s)
-	@return	string
-	*/
+	/**
+	 * @desc	Get JSON string that be translated with all the selected file(s)
+	 * @return	string
+	 */
 	get_selected: function(with_quote) {
 		var t = $('li.selected');
 		if (t.length == 1){
@@ -91,22 +136,22 @@ var FilePicker = {
 		return $.map(t, function(li){return '"' + li.innerHTML + '"';}).join(', ');
 	},
 
-	/*
-	@desc	select the file/folder
-	@param	object	obj
-	@param	boolean	set_filename	[default:false]
-	@return	void
-	*/
+	/**
+	 * @desc	select the file/folder
+	 * @param	object	obj
+	 * @param	boolean	set_filename	[default:false]
+	 * @return	void
+	 */
 	do_select: function(obj, set_filename) {
 		set_filename = set_filename || false;
 		obj.addClass('selected');
 		$('#filename_box').val(set_filename ? this.get_selected() : '');
 	},
 
-	/*
-	@desc	Unselect all file(s)/folder(s), and clear the information
-	@return	void
-	*/
+	/**
+	 * @desc	Unselect all file(s)/folder(s), and clear the information
+	 * @return	void
+	 */
 	do_unselect: function() {
 		$('li.selected').removeClass('selected');
 		$('#filename_box').val('');
@@ -114,22 +159,22 @@ var FilePicker = {
 		$('#filename_box').focus();
 	},
 
-	/*
-	@desc	Show the information box
-	@param	object	evt
-	@return	void
-	*/
+	/**
+	 * @desc	Show the information box
+	 * @param	object	evt
+	 * @return	void
+	 */
 	do_show_info: function(evt) {
 		var box = $('#info_box').addClass('info_box')
 			.css('top', (evt.pageY + 10) + 'px')
 			.css('left',(evt.pageX + 10) + 'px').fadeIn('fast');
 	},
 
-	/*
-	@desc	Hide the information box
-	@param	boolean	without_box
-	@return	void
-	*/
+	/**
+	 * @desc	Hide the information box
+	 * @param	boolean	without_box
+	 * @return	void
+	 */
 	do_hide_info: function(without_box) {
 		var box = $('#info_box').empty();
 		if (!without_box){
@@ -137,42 +182,42 @@ var FilePicker = {
 		}
 	},
 
-	/*
-	@desc	Get JSON string that be translated with all the selected file(s)
-	@return	string
-	*/
+	/**
+	 * @desc	Get JSON string that be translated with all the selected file(s)
+	 * @return	string
+	 */
 	do_translate_options: function() {
 		$('#folders_tree option').each(function(){
 			$(this).text($.base64.decode($(this).text()));
 		});
 	},
 
-	/*
-	@desc	Change the current folder to it parent
-	@return	void
-	*/
+	/**
+	 * @desc	Change the current folder to it parent
+	 * @return	void
+	 */
 	do_up: function() {
-		var dir = $.base64.decode($('#folders_tree').val());
+		var dir = $.base64.decode($('#target_dir').val());
 		var p = dir.lastIndexOf('/');
 		if (p < 0 || dir == '/') return false;
 		var s = dir.substr(0,p);
 		s = (s == '') ? '/' : $.base64.encode(s);
-		$('#folders_tree').val(s);
+		$('#folders_tree, #target_dir').val(s);
 		FilePicker.get_list();
 	},
 
-	/*
-	@desc	Deal with the incident of double-clicking on the file/folder
-	@return	void
-	*/
+	/**
+	 * @desc	Deal with the incident of double-clicking on the file/folder
+	 * @return	void
+	 */
 	do_dblclick: function(){
 		var self = FilePicker;
 		clearTimeout(self.timer);
 		var elmt = $(this);
 		if (elmt.attr('ftype') == 'folder'){
-			var dir = $.base64.decode($('#folders_tree').val());
+			var dir = $.base64.decode($('#target_dir').val());
 			if (dir != '/') dir += '/';
-			$('#folders_tree').val($.base64.encode(dir + elmt.text()));
+			$('#folders_tree, #target_dir').val($.base64.encode(dir + elmt.text()));
 			self.get_list();
 		} else {
 			self.do_select(elmt);
@@ -180,11 +225,11 @@ var FilePicker = {
 		}
 	},
 
-	/*
-	@desc	Deal with the incident of clicking on the file/folder
-	@param	object	event
-	@return	void
-	*/
+	/**
+	 * @desc	Deal with the incident of clicking on the file/folder
+	 * @param	object	event
+	 * @return	void
+	 */
 	do_click: function(evt) {
 		var self = FilePicker;
 		var elmt = $(this);
@@ -254,11 +299,11 @@ var FilePicker = {
 			$('#filename_box').val(self.get_selected());
 		}
 
-		/*
-		@desc	Make sure the click/dblclick works alone.
-				Click will be disabled if the event was dblclick
-		@since	1.0.2
-		*/
+		/**
+		 * @desc	Make sure click or dblclick will work alone.
+		 * 			Click will be disabled if the event was dblclick.
+		 * @since	1.0.2
+		 */
 		clearTimeout(self.timer);
 		self.timer = setTimeout(function () {
 			self.get_info(evt);
@@ -266,10 +311,10 @@ var FilePicker = {
 		return false;
 	},
 
-	/*
-	@desc	Get infomation of the selected file/folder
-	@return	void
-	*/
+	/**
+	 * @desc	Get infomation of the selected file/folder
+	 * @return	void
+	 */
 	get_info: function(evt) {
 		this.do_hide_info(true);
 		var t = $('li.selected');
@@ -281,7 +326,7 @@ var FilePicker = {
 			$.ajax({
 				data:{
 					action: 'info',
-					dir: $('#folders_tree').val(),
+					dir: $('#target_dir').val(),
 					file: $.base64.encode(t.text())
 				},
 				success: function(json){
@@ -308,14 +353,13 @@ var FilePicker = {
 						}
 						i++;
 					});
-					// Add a link of current file to open it in a new window, except folder
+					/**
+					 * @desc	Add a "Open in a new window" link in the detail box, except folder
+					 * @since	1.1
+					 */
 					if (t.attr('class').indexOf('folder') !== -1) return ;
-					var folder = $.base64.decode($('#folders_tree').val());
+					var folder = $.base64.decode($('#target_dir').val());
 					folder = self.params.uri + (folder == '/' ? '' : folder);
-					/*
-					@desc	Add a "Open in a new window" link in the detail box
-					@since	1.1
-					*/
 					$('#info_box').append(
 						'&lt;<em><a href="' + folder + '/' + t.text() + '" target="_blank">Open in a new window</a></em>&gt;'
 					);
@@ -324,11 +368,11 @@ var FilePicker = {
 		}
 	},
 
-	/*
-	@desc	Get file(s)/folder(s) list of current directory
-	@param	boolean	read_cache	[default:true]
-	@return	void
-	*/
+	/**
+	 * @desc	Get file(s)/folder(s) list of current directory
+	 * @param	boolean	read_cache	[default:true]
+	 * @return	void
+	 */
 	get_list: function(read_cache) {
 		if ( typeof(read_cache) == 'undefined' ) read_cache = true;
 		// Clean memory when the list was change
@@ -341,7 +385,7 @@ var FilePicker = {
 			cache: read_cache,
 			data: {
 				action: 'list',
-				dir: $('#folders_tree').val(),
+				dir: $('#target_dir').val(),
 				filter: $('#filter_box').val()
 			},
 			success: function(json){
@@ -355,28 +399,35 @@ var FilePicker = {
 						.attr('title', item.name).html(item.name)
 						.addClass(item.type).click(self.do_click)
 						.dblclick(self.do_dblclick).appendTo('#list');
-					if (item.type != 'folder') {
+					if (self.params.auto_complete == true && item.type != 'folder') {
 						files.push(item.name);
 					}
 				});
-				$('#filename_box').autocompleteArray(files, {onItemSelect: function(){
-					// `Click` the file that selected from the list of Auto-Complete
-					$('li:not(li[ftyp:folder])').each(function(){
-						if ($(this).html() == $('#filename_box').val()){
-							$(this).click();
-							return false;
-						}
-					});
-				}});
+				if (self.params.auto_complete == true) {
+					$('#filename_box').autocompleteArray(files, {onItemSelect: function(){
+						// `Click` the file that selected from the list of Auto-Complete
+						$('li:not(li[ftyp:folder])').each(function(){
+							if ($(this).html() == $('#filename_box').val()){
+								self.do_select($(this), true);
+								$('#list_box').scrollTop(
+									$('#list_box').scrollTop() + 
+									$(this).position().top - 
+									$('#list_box').position().top
+								);
+								return false;
+							}
+						});
+					}});
+				}
 				self.do_unselect();
 			}
 		});
 	},
 
-	/*
-	@desc	Bind all events that we need
-	@return	void
-	*/
+	/**
+	 * @desc	Bind all events that we need
+	 * @return	void
+	 */
 	events_binder: function() {
 		var self = FilePicker;
 		$('body').bind('selectstart', function(){return false;});
