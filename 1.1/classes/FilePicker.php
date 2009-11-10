@@ -197,13 +197,17 @@ class FilePicker {
 	}
 
 	/*
-	@desc	Get folder-tree of $dir (recursive)
+	@desc	Get folder-tree of $dir (non-recursive)
 	@param	string	$dir	[default:FP_ROOT_PATH]
 	@param	string	$level	[default:0]
 	@access	private
+	@since	1.1
 	@return	string
 	*/
 	function get_tree($dir=FP_ROOT_PATH, $level=0){
+		if (FP_DIR_LEVEL <= -1) {
+			
+		}
 		$tree = '';
 		if (is_dir($dir)){
 			for ($i=0,$prefix=''; $i<=$level; $i++) $prefix .= '...';
@@ -213,7 +217,7 @@ class FilePicker {
 					$filename = $dir . '/' . $file;
 					if (is_dir($filename)){
 						$tree .= '<option value="' . base64_encode(str_replace(FP_ROOT_PATH, '', $filename)) . '">' . base64_encode($prefix . '|- ' . $file) . '</option>';
-						$tree .= $this->get_tree($filename,$level+1);
+						$tree .= $this->get_tree($filename, $level+1);
 					}
 				}
 				closedir($dh);
@@ -222,6 +226,32 @@ class FilePicker {
 		return $tree;
 	}
 
+	/*
+	@desc	Get folder-tree of $dir (recursive)
+	@param	string	$dir	[default:FP_ROOT_PATH]
+	@param	string	$level	[default:0]
+	@access	private
+	@return	string
+	*/
+	function get_tree_recursive($dir=FP_ROOT_PATH, $level=0){
+		$tree = '';
+		if (is_dir($dir)){
+			for ($i=0,$prefix=''; $i<=$level; $i++) $prefix .= '...';
+			if ($dh = opendir($dir)){
+				while (($file = readdir($dh)) !== false){
+					if ($file == '.' || $file == '..') continue;
+					$filename = $dir . '/' . $file;
+					if (is_dir($filename)){
+						$tree .= '<option value="' . base64_encode(str_replace(FP_ROOT_PATH, '', $filename)) . '">' . base64_encode($prefix . '|- ' . $file) . '</option>';
+						$tree .= $this->get_tree_recursive($filename,$level+1);
+					}
+				}
+				closedir($dh);
+			}
+		}
+		return $tree;
+	}
+	
 	/*
 	@desc	Get filters list that can be selected by client-side user
 	@param	integer	$filter	[default:31]	[range:1,2,3...126,127]
