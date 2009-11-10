@@ -15,9 +15,9 @@ and GPL (GPL-LICENSE.txt) licenses.
 define('FP_ROOT_PATH', './media');
 
 // Folder URI
-define('FP_ROOT_URI', '/eclipse/file-picker/trunk/1.1/media');
+define('FP_ROOT_URI', 'http://localhost/eclipse/file-picker/trunk/1.1/media');
 
-// Langeuage [Default: zh_CN]
+// Langeuage [Default: en]
 define('FP_LANGUAGE', 'zh_CN');
 
 // Data format [Default: Y-m-d]
@@ -34,6 +34,11 @@ define('FP_DECIMAL', '.');
 
 // Number of decimals to display [Default: 2]
 define('FP_DECIMAL_NUM', 2);
+
+// How many level of FP_ROOT_PATH that user can visit, 0 means root only [Default: 1]
+// 0 means root only, -1 means unlimited
+// @since: 1.1
+define('FP_DIR_LEVEL', 1);
 
 // --------------------- Configration end --------------------------
 
@@ -63,11 +68,13 @@ switch ($action){
 		$file = $_GET['file'] ? $_GET['file'] : '';
 		echo $fp->get_info($dir, $file);
 		break;
+/*
 	case 'new':
 		$dir = $_GET['dir'] ? $_GET['dir'] : '/';
 		$folder = $_GET['folder'] ? $_GET['folder'] : 'New Folder';
 		$fp->new_folder($dir, $folder);
 		break;
+*/
 	default :
 		$key = $_GET['var'] ? $_GET['var'] : 'FP_RESULT';
 		$filter = $_GET['filter'] ? $_GET['filter'] : 31;
@@ -132,6 +139,7 @@ $(document).ready(function(){
 		multi: <?php echo $multi ? 'true' : 'false'; ?>,
 		access: '<?php echo $_SERVER['PHP_SELF']; ?>',
 		unicode: true,
+		auto-complete: true,
 		delay: 300
 	});
 });

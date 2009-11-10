@@ -70,7 +70,7 @@ var FilePicker = {
 	*/
 	get_uri: function() {
 		var uri;
-		uri = $.base64.decode($('#folders_tree').val());
+		uri = $.base64.decode($('#target_dir').val());
 		uri = uri == '/' ? '' : uri;
 		return this.params.uri + uri;
 	},
@@ -148,12 +148,13 @@ var FilePicker = {
 	@return	void
 	*/
 	do_up: function() {
-		var dir = $.base64.decode($('#folders_tree').val());
+		var dir = $.base64.decode($('#target_dir').val());
 		var p = dir.lastIndexOf('/');
 		if (p < 0 || dir == '/') return false;
 		var s = dir.substr(0,p);
 		s = (s == '') ? '/' : $.base64.encode(s);
 		$('#folders_tree').val(s);
+		$('#target_dir').val(s);
 		FilePicker.get_list();
 	},
 
@@ -166,9 +167,11 @@ var FilePicker = {
 		clearTimeout(self.timer);
 		var elmt = $(this);
 		if (elmt.attr('ftype') == 'folder'){
-			var dir = $.base64.decode($('#folders_tree').val());
+			var dir = $.base64.decode($('#target_dir').val());
 			if (dir != '/') dir += '/';
-			$('#folders_tree').val($.base64.encode(dir + elmt.text()));
+			dir = $.base64.encode(dir + elmt.text());
+			$('#folders_tree').val(dir);
+			$('#target_dir').val(dir);
 			self.get_list();
 		} else {
 			self.do_select(elmt);
@@ -277,7 +280,7 @@ var FilePicker = {
 			$.ajax({
 				data:{
 					action: 'info',
-					dir: $('#folders_tree').val(),
+					dir: $('#target_dir').val(),
 					file: $.base64.encode(t.text())
 				},
 				success: function(json){
@@ -326,7 +329,7 @@ var FilePicker = {
 			cache: read_cache,
 			data: {
 				action: 'list',
-				dir: $('#folders_tree').val(),
+				dir: $('#target_dir').val(),
 				filter: $('#filter_box').val()
 			},
 			success: function(json){

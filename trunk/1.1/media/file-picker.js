@@ -16,6 +16,7 @@ var FilePicker = {
 		multi: true,
 		access: 'file-picker.php',
 		unicode: true,
+		auto-complete: true,	// @since: 1.1
 		delay: 300
 	},
 	last_click: null,
@@ -311,6 +312,10 @@ var FilePicker = {
 					if (t.attr('class').indexOf('folder') !== -1) return ;
 					var folder = $.base64.decode($('#folders_tree').val());
 					folder = self.params.uri + (folder == '/' ? '' : folder);
+					/*
+					@desc	Add a "Open in a new window" link in the detail box
+					@since	1.1
+					*/
 					$('#info_box').append(
 						'&lt;<em><a href="' + folder + '/' + t.text() + '" target="_blank">Open in a new window</a></em>&gt;'
 					);

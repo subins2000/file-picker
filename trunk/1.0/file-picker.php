@@ -77,7 +77,7 @@ switch ($action){
 		$filters = $fp->get_filters($filter);
 
 		$tree = '';
-		$tree = $fp->get_tree();
+		//$tree = $fp->get_tree();
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -89,7 +89,7 @@ switch ($action){
 <script type="text/javascript" src="./media/jquery/jquery.autocomplete.min.js"></script>
 <script type="text/javascript" src="./media/jquery/jquery.ppdrag.pack.js"></script>
 <script type="text/javascript" src="./media/jquery/jquery.base64.min.js"></script>
-<script type="text/javascript" src="./media/file-picker.min.js"></script>
+<script type="text/javascript" src="./media/file-picker.js"></script>
 </head>
 
 <body>
@@ -98,7 +98,7 @@ switch ($action){
 	<div id="header">
 		<table cellspacing="0" cellpadding="0"><tr>
 			<td class="label"><label><?php _e('Folder'); ?></label>:</td>
-			<td><select id="folders_tree" class="select"><option value="Lw==">Lw==</option><?php echo $tree; ?></select></td>
+			<td><select id="folders_tree" class="select"><option value="Lw==">Lw==</option><?php echo $tree; ?></select><input type="hidden" id="target_dir" value="/" /></td>
 			<td class="button"><ul>
 				<li><img id="btn_refresh" src="./media/images/refresh.gif" alt="<?php _e('Refresh'); ?>" /></li>
 				<li><img id="btn_up" src="./media/images/up.gif" alt="<?php _e('Up'); ?>" /></li>
