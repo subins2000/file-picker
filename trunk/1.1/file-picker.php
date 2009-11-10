@@ -1,13 +1,15 @@
 <?php
-/*
-Program Name: File Picker
-Program URI: http://code.google.com/p/file-picker/
-Description: Display and choose files from your website.
-
-Copyright (c) 2008 Hpyer (hpyer[at]yahoo.cn)
-Dual licensed under the MIT (MIT-LICENSE.txt)
-and GPL (GPL-LICENSE.txt) licenses.
-*/
+/**
+ * Program Name: File Picker
+ * Program URI: http://code.google.com/p/file-picker/
+ * Description: This program will let you browse server-side folders and files
+ * 				like a Windows Explorer, and you can pick several files that you
+ * 				want to process in somewhere.
+ * 
+ * Copyright (c) 2008-2009 Hpyer (coolhpy[at]163.com)
+ * Dual licensed under the MIT (MIT-LICENSE.txt)
+ * and GPL (GPL-LICENSE.txt) licenses.
+ */
 
 // -------------------- Configration begin -------------------------
 
@@ -37,8 +39,9 @@ define('FP_DECIMAL_NUM', 2);
 
 // How many level of FP_ROOT_PATH that user can visit, 0 means root only [Default: 1]
 // 0 means root only, -1 means unlimited
-// @since: 1.1
-define('FP_DIR_LEVEL', 1);
+// @since: 1.1.1
+// (Not ready for 1.1 - Nov. 10, 2009)
+// define('FP_DIR_LEVEL', 1);
 
 // --------------------- Configration end --------------------------
 
@@ -105,7 +108,7 @@ switch ($action){
 	<div id="header">
 		<table cellspacing="0" cellpadding="0"><tr>
 			<td class="label"><label><?php _e('Folder'); ?></label>:</td>
-			<td><select id="folders_tree" class="select"><option value="Lw==">Lw==</option><?php echo $tree; ?></select></td>
+			<td><select id="folders_tree" class="select"><option value="Lw==">Lw==</option><?php echo $tree; ?></select><input type="hidden" id="target_dir" value="/" /></td>
 			<td class="button"><ul>
 				<li><img id="btn_refresh" src="./media/images/refresh.gif" alt="<?php _e('Refresh'); ?>" /></li>
 				<li><img id="btn_up" src="./media/images/up.gif" alt="<?php _e('Up'); ?>" /></li>
@@ -139,8 +142,8 @@ $(document).ready(function(){
 		multi: <?php echo $multi ? 'true' : 'false'; ?>,
 		access: '<?php echo $_SERVER['PHP_SELF']; ?>',
 		unicode: true,
-		auto-complete: true,
-		delay: 300
+		delay: 300,
+		auto_complete: true
 	});
 });
 </script>

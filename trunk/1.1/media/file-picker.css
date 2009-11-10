@@ -1,13 +1,14 @@
-/*
-Program Name: File Picker
-Program URI: http://www.hpyer.cn/file-picker.html
-Description: Display and choose files from your website.
-Version: 1.0 build 20080901
-
-Copyright (c) 2008 Hpyer (hpyer@yahoo.cn)
-Dual licensed under the MIT (MIT-LICENSE.txt)
-and GPL (GPL-LICENSE.txt) licenses.
-*/
+/**
+ * Program Name: File Picker
+ * Program URI: http://code.google.com/p/file-picker/
+ * Description: This program will let you browse server-side folders and files
+ * 				like a Windows Explorer, and you can pick several files that you
+ * 				want to process in somewhere.
+ * 
+ * Copyright (c) 2008-2009 Hpyer (coolhpy[at]163.com)
+ * Dual licensed under the MIT (MIT-LICENSE.txt)
+ * and GPL (GPL-LICENSE.txt) licenses.
+ */
 
 ul,ol{list-style-type:none;}
 *{
@@ -119,7 +120,9 @@ ul,ol{list-style-type:none;}
 	padding: 0px;
 	border: 1px solid WindowFrame;
 	background-color: Window;
-	overflow: hidden;
+	overflow-x: hidden;
+	overflow-y: auto;
+	height: 60px;
 }
 .ac_results ul{
 	width: 100%;
@@ -137,7 +140,6 @@ ul,ol{list-style-type:none;}
 	z-index:-1;
 	filter:mask();
 	width:3000px;
-	height:3000px;
 }
 .ac_results li{
 	margin: 0px;
